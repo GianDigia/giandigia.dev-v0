@@ -3,6 +3,31 @@ import React from "react"
 import styled from "styled-components"
 import { default as GImg } from "gatsby-image"
 
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "tooSerious.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <HeaderWrapper>
+      <Title>
+        <Link to="/">
+          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          {siteTitle}
+        </Link>
+      </Title>
+    </HeaderWrapper>
+  )
+}
+
 const HeaderWrapper = styled.header`
   margin-bottom: 1.45rem;
   padding: 1.45rem 1rem 0 1rem;
@@ -31,30 +56,5 @@ const Img = styled(GImg)`
     }
   }
 `
-
-const Header = ({ siteTitle }) => {
-  const data = useStaticQuery(graphql`
-    query {
-      placeholderImage: file(relativePath: { eq: "tooSerious.jpg" }) {
-        childImageSharp {
-          fluid(maxWidth: 300) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
-  return (
-    <HeaderWrapper>
-      <Title>
-        <Link to="/">
-          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
-          {siteTitle}
-        </Link>
-      </Title>
-    </HeaderWrapper>
-  )
-}
 
 export default Header
