@@ -13,7 +13,7 @@ const Link = styled(GLink)`
   text-decoration: none;
 `
 
-const Title = styled.h1`
+const Title = styled.h2`
   margin: 0;
   text-align: center;
   line-height: 75px;
