@@ -29,10 +29,10 @@ const Layout = ({ children }) => {
       <main>{children}</main>
       <Footer>
         <h6>
-          Made with{" "}
-          <span role="img" aria-label="heart">
+          Made with
+          <Heart role="img" aria-label="heart">
             ❤️
-          </span>{" "}
+          </Heart>
           by GianDigia
         </h6>
       </Footer>
@@ -53,6 +53,10 @@ const Footer = styled.footer`
   padding: 1rem;
   text-align: center;
   color: white;
+`
+
+const Heart = styled.span`
+  margin: 0 -1px 0 5px;
 `
 
 Layout.propTypes = {
