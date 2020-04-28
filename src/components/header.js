@@ -3,7 +3,7 @@ import React from "react"
 import styled from "styled-components"
 import { default as GImg } from "gatsby-image"
 
-const Navbar = styled.header`
+const HeaderWrapper = styled.header`
   margin-bottom: 1.45rem;
   padding: 1.45rem 1rem 0 1rem;
 `
@@ -46,14 +46,14 @@ const Header = ({ siteTitle }) => {
   `)
 
   return (
-    <Navbar>
+    <HeaderWrapper>
       <Title>
         <Link to="/">
           <Img fluid={data.placeholderImage.childImageSharp.fluid} />
           {siteTitle}
         </Link>
       </Title>
-    </Navbar>
+    </HeaderWrapper>
   )
 }
 
