@@ -24,9 +24,24 @@ const Header = ({ siteTitle }) => {
           {siteTitle}
         </Link>
       </Title>
+      <NavbarWrapper>
+        <Navbar></Navbar>
+      </NavbarWrapper>
     </HeaderWrapper>
   )
 }
+
+const Navbar = styled.div`
+  background-color: white;
+  padding: 3vw;
+  border-radius: 10px;
+`
+
+const NavbarWrapper = styled.div`
+  width: 100%;
+  padding: 0 5vw;
+  margin-top: 15px;
+`
 
 const HeaderWrapper = styled.header`
   margin-bottom: 1.45rem;
