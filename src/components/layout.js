@@ -28,9 +28,13 @@ const Layout = ({ children }) => {
       <Header siteTitle={data.site.siteMetadata.title} />
       <main>{children}</main>
       <Footer>
-        Built by GianDigia with
-        {` `}
-        <a href="https://www.gatsbyjs.org">Gatsby</a>
+        <h6>
+          Made with{" "}
+          <span role="img" aria-label="heart">
+            ❤️
+          </span>{" "}
+          by GianDigia
+        </h6>
       </Footer>
     </InnerBody>
   )
@@ -48,7 +52,7 @@ const Footer = styled.footer`
   left: 0;
   padding: 1rem;
   text-align: center;
-  color: black;
+  color: white;
 `
 
 Layout.propTypes = {

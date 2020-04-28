@@ -17,12 +17,19 @@ const Title = styled.h2`
   margin: 0;
   text-align: center;
   line-height: 75px;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 `
 
 const Img = styled(GImg)`
   border-radius: 100%;
   max-width: 8rem;
   margin: 0 auto;
+  @media (min-width: 1200px) {
+    transition: transform 0.2s;
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
 `
 
 const Header = ({ siteTitle }) => {
@@ -40,9 +47,11 @@ const Header = ({ siteTitle }) => {
 
   return (
     <Navbar>
-      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
       <Title>
-        <Link to="/">{siteTitle}</Link>
+        <Link to="/">
+          <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+          {siteTitle}
+        </Link>
       </Title>
     </Navbar>
   )
