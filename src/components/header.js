@@ -1,10 +1,11 @@
-import { Link as GLink } from "gatsby"
+import { graphql, Link as GLink, useStaticQuery } from "gatsby"
 import React from "react"
 import styled from "styled-components"
+import { default as GImg } from "gatsby-image"
 
 const Navbar = styled.header`
-  background: #1d1d1d;
   margin-bottom: 1.45rem;
+  padding: 1.45rem 1rem 0 1rem;
 `
 
 const Link = styled(GLink)`
@@ -12,24 +13,39 @@ const Link = styled(GLink)`
   text-decoration: none;
 `
 
-const Container = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
-  padding: 1.45rem 1.0875rem;
-`
-
-const TextLogo = styled.h1`
+const Title = styled.h1`
   margin: 0;
+  text-align: center;
+  line-height: 75px;
 `
 
-const Header = ({ siteTitle }) => (
-  <Navbar>
-    <Container>
-      <TextLogo>
+const Img = styled(GImg)`
+  border-radius: 100%;
+  max-width: 8rem;
+  margin: 0 auto;
+`
+
+const Header = ({ siteTitle }) => {
+  const data = useStaticQuery(graphql`
+    query {
+      placeholderImage: file(relativePath: { eq: "tooSerious.jpg" }) {
+        childImageSharp {
+          fluid(maxWidth: 300) {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `)
+
+  return (
+    <Navbar>
+      <Img fluid={data.placeholderImage.childImageSharp.fluid} />
+      <Title>
         <Link to="/">{siteTitle}</Link>
-      </TextLogo>
-    </Container>
-  </Navbar>
-)
+      </Title>
+    </Navbar>
+  )
+}
 
 export default Header
