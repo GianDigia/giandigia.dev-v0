@@ -20,10 +20,11 @@
     "gatsby-transformer-sharp": "^2.4.3",
     "prop-types": "^15.7.2",
     "react": "^16.12.0",
+    "react-device-detect": "^1.12.1",
     "react-dom": "^16.12.0",
     "react-feather": "^2.0.4",
     "react-helmet": "^5.2.1",
-    "styled-components": "^5.1.0"
+    "styled-components": "^5.1.0",
     "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
