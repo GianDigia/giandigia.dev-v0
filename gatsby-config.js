@@ -31,5 +31,12 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
     "gatsby-plugin-styled-components",
+    {
+      resolve: `gatsby-plugin-google-analytics`,
+      options: {
+        trackingId: "UA-165311276-1",
+        head: true,
+      },
+    },
   ],
 }
