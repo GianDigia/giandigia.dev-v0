@@ -15,17 +15,25 @@ import "./global.css"
 import { palette as lightPalette } from "../config/palette/light"
 import { palette as darkPalette } from "../config/palette/dark"
 import ThemeToggle from "./ThemeToggle"
+import Img from 'gatsby-image'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
+		query {
       site {
         siteMetadata {
           title
-        }
-      }
-    }
-  `)
+				}
+			}
+			gatsbyLogo: file(relativePath: { eq: "gatsbyLogo.png" }) {
+				childImageSharp {
+					fluid(maxWidth: 300) {
+						...GatsbyImageSharpFluid
+					}
+				}
+			}
+		}
+	`)
 
   const [darkMode, setDarkMode] = useState(true)
 
@@ -39,13 +47,15 @@ const Layout = ({ children }) => {
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
         <Footer>
-          <h6>
-            Made with
-            <Heart role="img" aria-label="heart">
-              ❤️
-            </Heart>
-            by GianDigia
-          </h6>
+          <InlineWrapper>
+						Made in
+            <Italy role="img" aria-label="Italy">
+							🇮🇹
+            </Italy>
+						with
+            <GatsbyLogo fluid={data.gatsbyLogo.childImageSharp.fluid} />
+						atsby
+          </InlineWrapper>
         </Footer>
       </InnerBody>
     </ThemeProvider>
@@ -53,22 +63,33 @@ const Layout = ({ children }) => {
 }
 
 const InnerBody = styled.div`
-  background-color: ${({ theme }) => theme.background};
-  height: 100%;
+	background-color: ${({ theme }) => theme.background};
+	height: 100%;
 `
 
 const Footer = styled.footer`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  text-align: center;
-  color: ${({ theme }) => theme.text};
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	padding: 1rem;
+	text-align: center;
+	color: ${({ theme }) => theme.text};
 `
 
-const Heart = styled.span`
-  margin: 0 -1px 0 5px;
+const InlineWrapper = styled.h4`
+	display: inline-flex;
+	font-weight: 300;
+`
+
+const Italy = styled.span`
+	margin: 0 -1px 0 5px;
+`
+
+const GatsbyLogo = styled(Img)`
+	width: 1.1em;
+	height: 1.1em;
+	margin: 0 0 0.2em 0.4em;
 `
 
 Layout.propTypes = {
