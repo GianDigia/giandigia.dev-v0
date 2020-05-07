@@ -1,5 +1,6 @@
 import React from "react"
 import styled, { css } from "styled-components"
+import PropTypes from 'prop-types'
 
 const ThemeToggle = props => {
   return (
@@ -7,6 +8,11 @@ const ThemeToggle = props => {
       <Circle darkMode={props.darkMode} />
     </Button>
   )
+}
+
+ThemeToggle.propTypes = {
+  darkMode: PropTypes.bool,
+  handleClick: PropTypes.func,
 }
 
 export default ThemeToggle
