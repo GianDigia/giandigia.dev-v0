@@ -32,7 +32,7 @@ const Header = ({ siteTitle }) => {
 }
 
 const Navbar = styled.div`
-  background-color: white;
+  background-color: ${({ theme }) => theme.text};
   padding: 3vw;
   border-radius: 10px;
 `

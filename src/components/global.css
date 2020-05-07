@@ -1,0 +1,7 @@
+#___gatsby, #gatsby-focus-wrapper {
+    height:100%;
+}
+
+* {
+    transition: background-color 0.5s ease;
+}
