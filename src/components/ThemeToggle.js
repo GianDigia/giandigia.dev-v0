@@ -1,5 +1,5 @@
-import React from "react"
-import styled, { css } from "styled-components"
+import React from 'react'
+import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 
 const ThemeToggle = props => {
@@ -54,13 +54,13 @@ const Circle = styled.div`
     top: -9px;
 
     ${({ darkMode }) =>
-      darkMode
-        ? css`
+    darkMode
+      ? css`
             opacity: 0;
             transform: translate(14px, -14px);
             transition: transform 0.45s ease 0s;
           `
-        : css`
+      : css`
             opacity: 1;
             transform: translate(0, 0);
             transition: transform 0.45s ease;
@@ -77,8 +77,8 @@ const Circle = styled.div`
     top: 50%;
 
     ${({ darkMode }) =>
-      darkMode
-        ? css`
+    darkMode
+      ? css`
             box-shadow: rgb(255, 255, 255) 0px -23px 0px,
               rgb(255, 255, 255) 0px 23px 0px, rgb(255, 255, 255) 23px 0px 0px,
               rgb(255, 255, 255) -23px 0px 0px, rgb(255, 255, 255) 15px 15px 0px,
@@ -88,7 +88,7 @@ const Circle = styled.div`
             transform: scale(1);
             transition: all 0.35s ease 0s;
           `
-        : css`
+      : css`
             box-shadow: 0 -23px 0 hsl(0, 0%, 10%), 0 23px 0 hsl(0, 0%, 10%),
               23px 0 0 hsl(0, 0%, 10%), -23px 0 0 hsl(0, 0%, 10%),
               15px 15px 0 hsl(0, 0%, 10%), -15px 15px 0 hsl(0, 0%, 10%),

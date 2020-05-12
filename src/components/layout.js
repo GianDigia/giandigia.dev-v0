@@ -5,16 +5,16 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from "react"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
-import styled, { ThemeProvider } from "styled-components"
-import Header from "./header"
-import "./layout.css"
-import "./global.css"
-import { palette as lightPalette } from "../config/palette/light"
-import { palette as darkPalette } from "../config/palette/dark"
-import ThemeToggle from "./ThemeToggle"
+import React, { useState } from 'react'
+import PropTypes from 'prop-types'
+import { useStaticQuery, graphql } from 'gatsby'
+import styled, { ThemeProvider } from 'styled-components'
+import Header from './header'
+import './layout.css'
+import './global.css'
+import { palette as lightPalette } from '../config/palette/light'
+import { palette as darkPalette } from '../config/palette/dark'
+import ThemeToggle from './ThemeToggle'
 import Img from 'gatsby-image'
 
 const Layout = ({ children }) => {

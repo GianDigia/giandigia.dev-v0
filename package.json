@@ -29,7 +29,9 @@
     "typeface-roboto": "^0.0.75"
   },
   "devDependencies": {
-    "prettier": "^1.19.1"
+    "eslint": "^7.0.0",
+    "eslint-plugin-react": "^7.19.0",
+    "prettier": "^2.0.5"
   },
   "keywords": [
     "gatsby"

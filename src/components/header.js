@@ -1,8 +1,8 @@
-import { graphql, Link as GLink, useStaticQuery } from "gatsby"
-import React from "react"
-import styled, { css } from "styled-components"
-import { default as GImg } from "gatsby-image"
-import { isBrowser } from "react-device-detect"
+import { graphql, Link as GLink, useStaticQuery } from 'gatsby'
+import React from 'react'
+import styled, { css } from 'styled-components'
+import { default as GImg } from 'gatsby-image'
+import { isBrowser } from 'react-device-detect'
 import PropTypes from 'prop-types'
 
 const Header = ({ siteTitle }) => {
@@ -36,7 +36,7 @@ const Header = ({ siteTitle }) => {
 }
 
 Header.propTypes = {
-	siteTitle: PropTypes.string,
+  siteTitle: PropTypes.string,
 }
 
 const ImageLink = styled(GLink)`
