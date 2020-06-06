@@ -5,7 +5,7 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
@@ -16,6 +16,7 @@ import { palette as lightPalette } from '../config/palette/light'
 import { palette as darkPalette } from '../config/palette/dark'
 import ThemeToggle from './ThemeToggle'
 import Img from 'gatsby-image'
+import { useDarkMode } from 'use-hooks'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,7 +36,8 @@ const Layout = ({ children }) => {
 		}
 	`)
 
-  const [darkMode, setDarkMode] = useState(true)
+
+  const [darkMode, setDarkMode] = useDarkMode()
 
   return (
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>
