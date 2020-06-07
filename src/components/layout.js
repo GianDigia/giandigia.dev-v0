@@ -17,6 +17,7 @@ import { palette as darkPalette } from '../config/palette/dark'
 import ThemeToggle from './ThemeToggle'
 import Img from 'gatsby-image'
 import { useDarkMode } from 'use-hooks'
+import Navbar from './navbar'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -42,6 +43,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>
       <InnerBody>
+        <Navbar />
         <ThemeToggle
           darkMode={darkMode}
           handleClick={() => setDarkMode(!darkMode)}
