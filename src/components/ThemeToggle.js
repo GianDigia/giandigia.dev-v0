@@ -19,11 +19,10 @@ const Button = styled.button`
   border: 0;
   outline: none;
   float: right;
-  margin: 15px;
 `
 
 const Circle = styled.div`
-  background-color: ${({ theme }) => theme.text};
+  background-color: #fbc21b;
   border-radius: 50%;
   width: 24px;
   height: 24px;
@@ -76,20 +75,20 @@ const Circle = styled.div`
     ${({ darkMode }) =>
     darkMode
       ? css`
-            box-shadow: rgb(255, 255, 255) 0px -23px 0px,
-              rgb(255, 255, 255) 0px 23px 0px, rgb(255, 255, 255) 23px 0px 0px,
-              rgb(255, 255, 255) -23px 0px 0px, rgb(255, 255, 255) 15px 15px 0px,
-              rgb(255, 255, 255) -15px 15px 0px,
-              rgb(255, 255, 255) 15px -15px 0px,
-              rgb(255, 255, 255) -15px -15px 0px;
+            box-shadow: #ffd96b 0px -23px 0px,
+              #ffd96b 0px 23px 0px, #ffd96b 23px 0px 0px,
+              #ffd96b -23px 0px 0px, #ffd96b 15px 15px 0px,
+              #ffd96b -15px 15px 0px,
+              #ffd96b 15px -15px 0px,
+              #ffd96b -15px -15px 0px;
             transform: scale(1);
             transition: all 0.35s ease 0s;
           `
       : css`
-            box-shadow: 0 -23px 0 hsl(0, 0%, 10%), 0 23px 0 hsl(0, 0%, 10%),
-              23px 0 0 hsl(0, 0%, 10%), -23px 0 0 hsl(0, 0%, 10%),
-              15px 15px 0 hsl(0, 0%, 10%), -15px 15px 0 hsl(0, 0%, 10%),
-              15px -15px 0 hsl(0, 0%, 10%), -15px -15px 0 hsl(0, 0%, 10%);
+            box-shadow: 0 -23px 0 #ffd96b, 0 23px 0 #ffd96b,
+              23px 0 0 #ffd96b, -23px 0 0 #ffd96b,
+              15px 15px 0 #ffd96b, -15px 15px 0 #ffd96b,
+              15px -15px 0 #ffd96b, -15px -15px 0 #ffd96b;
             transform: scale(0);
             transition: all 0.35s ease;
           `}
