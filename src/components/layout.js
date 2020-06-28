@@ -14,9 +14,10 @@ import './layout.css'
 import './global.css'
 import { palette as lightPalette } from '../config/palette/light'
 import { palette as darkPalette } from '../config/palette/dark'
-import ThemeToggle from './ThemeToggle'
 import Img from 'gatsby-image'
 import Navbar from './navbar'
+import { useRecoilState } from 'recoil/dist'
+import { darkModeState } from '../recoil/atoms'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -36,6 +37,7 @@ const Layout = ({ children }) => {
 		}
 	`)
 
+  const [darkMode] = useRecoilState(darkModeState)
 
   return (
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>

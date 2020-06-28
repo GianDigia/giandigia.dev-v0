@@ -40,7 +40,7 @@ const Circle = styled.div`
         `}
 
   &:before {
-    background-color: ${({ theme }) => theme.background};
+    background-color: ${({ theme }) => theme.strongBg};
     border-radius: 50%;
     content: "";
     width: 24px;
