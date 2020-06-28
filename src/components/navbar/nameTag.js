@@ -8,16 +8,10 @@ const NameTag = ({scrolled}) => {
   return <Wrapper>
     <Group visible={!isFullName}>&lt;</Group>
     <Group visible={true}>Gian</Group>
-    <Group visible={isFullName}>m</Group>
-    <Group visible={isFullName}>a</Group>
-    <Group visible={isFullName}>r</Group>
-    <Group visible={isFullName}>c</Group>
-    <Group visible={isFullName}>o</Group>
+    <Group visible={isFullName} spacing={2.9}>marco</Group>
+    {isFullName && <Group visible={true}>{' '}</Group>}
     <Group visible={true}>Digia</Group>
-    <Group visible={isFullName}>c</Group>
-    <Group visible={isFullName}>o</Group>
-    <Group visible={isFullName}>m</Group>
-    <Group visible={isFullName}>o</Group>
+    <Group visible={isFullName} spacing={2.2}>como</Group>
     <Group visible={!isFullName}>/&gt;</Group>
   </Wrapper>
 }
@@ -27,7 +21,9 @@ const Wrapper = styled.div`
 `
 
 const Group = styled.span`
-margin-left: ${({visible}) => visible ? '0' : '-0.6em'};
+color: ${({theme}) => theme.title};
+transition: opacity 150ms ease-out 0s, margin 250ms ease-in-out 0s;
+margin-left: ${({visible, spacing}) => visible ? '0' : `-${spacing}em`};
 opacity: ${({visible}) => visible ? 1 : 0}
 
 `
