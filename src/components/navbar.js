@@ -14,8 +14,10 @@ const Navbar = () => {
     }
   })
 
+
   return <Wrapper scrolled={!!scrollY}>
     <NameTag scrolled={!!scrollY} />
+    <ThemeToggle />
   </Wrapper>
 }
 

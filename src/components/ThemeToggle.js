@@ -1,18 +1,15 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import PropTypes from 'prop-types'
+import { useDarkMode } from 'use-hooks'
 
-const ThemeToggle = props => {
+const ThemeToggle = () => {
+  const [darkMode, setDarkMode] = useDarkMode()
+
   return (
-    <Button darkMode={props.darkMode} onClick={props.handleClick}>
-      <Circle darkMode={props.darkMode} />
+    <Button darkMode={darkMode} onClick={setDarkMode}>
+      <Circle darkMode={darkMode} />
     </Button>
   )
-}
-
-ThemeToggle.propTypes = {
-  darkMode: PropTypes.bool,
-  handleClick: PropTypes.func,
 }
 
 export default ThemeToggle

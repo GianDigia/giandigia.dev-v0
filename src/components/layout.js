@@ -16,7 +16,6 @@ import { palette as lightPalette } from '../config/palette/light'
 import { palette as darkPalette } from '../config/palette/dark'
 import ThemeToggle from './ThemeToggle'
 import Img from 'gatsby-image'
-import { useDarkMode } from 'use-hooks'
 import Navbar from './navbar'
 
 const Layout = ({ children }) => {
@@ -38,16 +37,10 @@ const Layout = ({ children }) => {
 	`)
 
 
-  const [darkMode, setDarkMode] = useDarkMode()
-
   return (
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>
       <InnerBody>
         <Navbar />
-        <ThemeToggle
-          darkMode={darkMode}
-          handleClick={() => setDarkMode(!darkMode)}
-        />
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
         <Footer>
