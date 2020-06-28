@@ -1,6 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
-import { useDarkMode } from 'use-hooks'
+import useDarkMode from '../hooks/useDarkMode'
 
 const ThemeToggle = () => {
   const [darkMode, setDarkMode] = useDarkMode()

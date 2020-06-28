@@ -1,11 +1,10 @@
 import React from 'react'
-import { useWindowSize } from 'use-hooks'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { isMobile } from 'react-device-detect'
 
 const NameTag = ({scrolled}) => {
-  const size = useWindowSize()
-  const isFullName = size.width > 500 && !scrolled
+  const isFullName = !isMobile && !scrolled
   return <Wrapper>
     <Group visible={!isFullName}>&lt;</Group>
     <Group visible={true}>Gian</Group>
