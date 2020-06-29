@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import NameTag from './navbar/nameTag'
+import ThemeToggle from './ThemeToggle'
+
+const windowScrollY = () => {
+  let currentScroll = 0
+  if(typeof window !== 'undefined') {
+    currentScroll = window.scrollY
+  }
+  return currentScroll
+}
 
 const Navbar = () => {
-
-  const [scrollY, setScrollY] = useState(window.scrollY)
-  const handleScroll = () => setScrollY(window.scrollY)
+  const [scrollY, setScrollY] = useState(windowScrollY())
+  const handleScroll = () => setScrollY(windowScrollY())
 
   useEffect(() => {
     window.addEventListener('scroll', handleScroll)
@@ -33,13 +41,12 @@ const Wrapper = styled.nav`
     transition: background 250ms ease-in-out 0s, 
       box-shadow 250ms ease-in-out 0s;
 
+    background: ${({theme}) => theme.strongBg}
     
     ${({ scrolled }) => scrolled
     ? css`
-      background: rgb(255, 255, 255);
       box-shadow: rgba(0, 0, 0, 0.15) 0 1px 4px 0;`
-    : css`
-      background: rgb(246, 247, 248);`
+    : css``
 }
 `
 
