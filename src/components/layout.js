@@ -9,7 +9,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
-import Header from './header'
+import PersonalData from './personalData'
 import './layout.css'
 import './global.css'
 import { palette as lightPalette } from '../config/palette/light'
@@ -44,20 +44,20 @@ const Layout = ({ children }) => {
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>
       <InnerBody>
         <Container>
-        <Navbar />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        <Footer>
-          <InlineWrapper>
+          <Navbar />
+          <PersonalData />
+          <main>{children}</main>
+          <Footer>
+            <InlineWrapper>
 						Made in
-            <Italy role="img" aria-label="Italy">
+              <Italy role="img" aria-label="Italy">
 							🇮🇹
-            </Italy>
+              </Italy>
 						with
-            <GatsbyLogo fluid={data.gatsbyLogo.childImageSharp.fluid} />
+              <GatsbyLogo fluid={data.gatsbyLogo.childImageSharp.fluid} />
 						atsby
-          </InlineWrapper>
-        </Footer>
+            </InlineWrapper>
+          </Footer>
         </Container>
       </InnerBody>
     </ThemeProvider>

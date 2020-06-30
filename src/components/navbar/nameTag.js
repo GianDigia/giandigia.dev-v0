@@ -5,7 +5,7 @@ import { isMobile } from 'react-device-detect'
 
 const NameTag = ({scrolled}) => {
   const isFullName = !isMobile && !scrolled
-  return <Wrapper>
+  return <>
     <Group visible={!isFullName}>&lt;</Group>
     <Group visible={true}>Gian</Group>
     <Group visible={isFullName} spacing={2.9}>marco</Group>
@@ -13,12 +13,8 @@ const NameTag = ({scrolled}) => {
     <Group visible={true}>Digia</Group>
     <Group visible={isFullName} spacing={2.2}>como</Group>
     <Group visible={!isFullName}>/&gt;</Group>
-  </Wrapper>
+  </>
 }
-
-const Wrapper = styled.div`
-  margin-left: 3em;
-`
 
 const Group = styled.span`
 color: ${({theme}) => theme.title};

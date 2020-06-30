@@ -33,7 +33,6 @@ const Wrapper = styled.nav`
     padding-top: 16px;
     padding-bottom: 16px;
     display: flex;
-    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
