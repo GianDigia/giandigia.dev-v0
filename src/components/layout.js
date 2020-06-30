@@ -18,6 +18,7 @@ import Img from 'gatsby-image'
 import Navbar from './navbar'
 import { useRecoilState } from 'recoil/dist'
 import { darkModeState } from '../recoil/atoms'
+import Container from './styled/container'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -42,6 +43,7 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>
       <InnerBody>
+        <Container>
         <Navbar />
         <Header siteTitle={data.site.siteMetadata.title} />
         <main>{children}</main>
@@ -56,6 +58,7 @@ const Layout = ({ children }) => {
 						atsby
           </InlineWrapper>
         </Footer>
+        </Container>
       </InnerBody>
     </ThemeProvider>
   )
