@@ -9,7 +9,7 @@ const PersonalData = () => {
 		query {
       placeholderImage: file(relativePath: { eq: "tooSerious.jpg" }) {
         childImageSharp {
-          fluid(maxWidth: 300) {
+          fluid(quality: 50) {
             ...GatsbyImageSharpFluid
           }
         }
