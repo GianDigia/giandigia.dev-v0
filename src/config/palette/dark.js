@@ -1,4 +1,7 @@
 export const palette = {
-  background: '#0c0c0c',
-  text: '#FFFFFF',
+  background: '#1f1f1f',
+  strongBg: '#131313',
+  title: '#eee',
+  text: '#b3b9c5',
+  accent: '#6ab0f3',
 }
