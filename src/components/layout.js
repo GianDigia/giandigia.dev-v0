@@ -43,8 +43,8 @@ const Layout = ({ children }) => {
   return (
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>
       <InnerBody>
+        <Navbar />
         <Container>
-          <Navbar />
           <PersonalData />
           <main>{children}</main>
           <Footer>
@@ -70,10 +70,6 @@ const InnerBody = styled.div`
 `
 
 const Footer = styled.footer`
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	padding: 1rem;
 	text-align: center;
 	color: ${({ theme }) => theme.text};

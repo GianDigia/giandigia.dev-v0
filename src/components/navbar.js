@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import NameTag from './navbar/nameTag'
 import ThemeToggle from './ThemeToggle'
+import Container from './styled/container'
 
 const windowScrollY = () => {
   let currentScroll = 0
@@ -24,23 +25,28 @@ const Navbar = () => {
 
 
   return <Wrapper scrolled={!!scrollY}>
-    <NameTag scrolled={!!scrollY} />
-    <ThemeToggle />
+    <Container>
+      <InnerWrapper>
+        <NameTag scrolled={!!scrollY} />
+        <ThemeToggle />
+      </InnerWrapper>
+    </Container>
   </Wrapper>
 }
 
+const InnerWrapper = styled.div`
+  line-height: 26px;
+`
+
 const Wrapper = styled.nav`
-    padding-top: 16px;
-    padding-bottom: 16px;
-    display: flex;
+    padding: 16px;
+    position: sticky;
     top: 0;
-    left: 0;
-    width: 100%;
     z-index: 10;
     transition: background 250ms ease-in-out 0s, 
       box-shadow 250ms ease-in-out 0s;
 
-    background: ${({theme}) => theme.strongBg}
+    background: ${({theme}) => theme.strongBg};
     
     ${({ scrolled }) => scrolled
     ? css`
