@@ -5,17 +5,20 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React, { useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled, { ThemeProvider } from 'styled-components'
-import Header from './header'
+import PersonalData from './personalData'
 import './layout.css'
 import './global.css'
 import { palette as lightPalette } from '../config/palette/light'
 import { palette as darkPalette } from '../config/palette/dark'
-import ThemeToggle from './ThemeToggle'
 import Img from 'gatsby-image'
+import Navbar from './navbar'
+import { useRecoilState } from 'recoil/dist'
+import { darkModeState } from '../recoil/atoms'
+import Container from './styled/container'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
@@ -35,28 +38,27 @@ const Layout = ({ children }) => {
 		}
 	`)
 
-  const [darkMode, setDarkMode] = useState(true)
+  const [darkMode] = useRecoilState(darkModeState)
 
   return (
     <ThemeProvider theme={darkMode ? darkPalette : lightPalette}>
       <InnerBody>
-        <ThemeToggle
-          darkMode={darkMode}
-          handleClick={() => setDarkMode(!darkMode)}
-        />
-        <Header siteTitle={data.site.siteMetadata.title} />
-        <main>{children}</main>
-        <Footer>
-          <InlineWrapper>
+        <Navbar />
+        <Container>
+          <PersonalData />
+          <main>{children}</main>
+          <Footer>
+            <InlineWrapper>
 						Made in
-            <Italy role="img" aria-label="Italy">
+              <Italy role="img" aria-label="Italy">
 							🇮🇹
-            </Italy>
+              </Italy>
 						with
-            <GatsbyLogo fluid={data.gatsbyLogo.childImageSharp.fluid} />
+              <GatsbyLogo fluid={data.gatsbyLogo.childImageSharp.fluid} />
 						atsby
-          </InlineWrapper>
-        </Footer>
+            </InlineWrapper>
+          </Footer>
+        </Container>
       </InnerBody>
     </ThemeProvider>
   )
@@ -68,10 +70,6 @@ const InnerBody = styled.div`
 `
 
 const Footer = styled.footer`
-	position: absolute;
-	right: 0;
-	bottom: 0;
-	left: 0;
 	padding: 1rem;
 	text-align: center;
 	color: ${({ theme }) => theme.text};
