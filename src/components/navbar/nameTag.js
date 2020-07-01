@@ -2,10 +2,11 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { isMobile } from 'react-device-detect'
+import { Link as GLink } from 'gatsby'
 
 const NameTag = ({scrolled}) => {
   const isFullName = !isMobile && !scrolled
-  return <>
+  return <Link>
     <Group visible={!isFullName}>&lt;</Group>
     <Group visible={true}>Gian</Group>
     <Group visible={isFullName} spacing={2.9}>marco</Group>
@@ -13,8 +14,13 @@ const NameTag = ({scrolled}) => {
     <Group visible={true}>Digia</Group>
     <Group visible={isFullName} spacing={2.2}>como</Group>
     <Group visible={!isFullName}>/&gt;</Group>
-  </>
+  </Link>
 }
+
+const Link = styled(GLink)`
+  text-decoration: none;
+  font-weight: 500;
+`
 
 const Group = styled.span`
 color: ${({theme}) => theme.title};
