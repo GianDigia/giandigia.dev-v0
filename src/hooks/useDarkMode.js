@@ -1,9 +1,12 @@
 import { useRecoilState } from 'recoil'
-import { darkModeState } from '../recoil/atoms'
+import { darkModeSelectorName, darkModeState } from '../recoil/atoms'
 
 const useDarkMode = () => {
   const [isDarkMode, setDarkMode] = useRecoilState(darkModeState)
-  const toggleDarkMode = () => setDarkMode(!isDarkMode)
+  const toggleDarkMode = () => {
+    localStorage.setItem(darkModeSelectorName, !isDarkMode)
+    setDarkMode(!isDarkMode)
+  }
   return [isDarkMode, toggleDarkMode]
 }
 
