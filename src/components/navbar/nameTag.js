@@ -6,7 +6,7 @@ import { Link as GLink } from 'gatsby'
 
 const NameTag = ({scrolled}) => {
   const isFullName = !isMobile && !scrolled
-  return <Link>
+  return <Link to={'/'}>
     <Group visible={!isFullName}>&lt;</Group>
     <Group visible={true}>Gian</Group>
     <Group visible={isFullName} spacing={2.9}>marco</Group>
