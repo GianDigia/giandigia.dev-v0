@@ -1,11 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { isMobile } from 'react-device-detect'
 import { Link as GLink } from 'gatsby'
 
 const NameTag = ({scrolled}) => {
-  const isFullName = !isMobile && !scrolled
+
+  const [isFullName, setIsFullName] = useState(true)
+
+  // This is a workarount for a rehydration problem
+  // https://github.com/styled-components/styled-components/issues/2629
+  useEffect(() => {
+    setTimeout((isFull) => setIsFullName(isFull), 500, (!isMobile && !scrolled))
+  }, [])
+
   return <Link to={'/'}>
     <Group visible={!isFullName}>&lt;</Group>
     <Group visible={true}>Gian</Group>
