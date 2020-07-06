@@ -32,7 +32,7 @@ const Link = styled(GLink)`
 
 const Group = styled.span`
 color: ${({theme}) => theme.title};
-transition: opacity 150ms ease-out 0s, margin 250ms ease-in-out 0s;
+transition: opacity 250ms ease-out 0s, margin 250ms ease-in-out 0s;
 margin-left: ${({visible, spacing}) => visible ? '0' : `-${spacing}em`};
 opacity: ${({visible}) => visible ? 1 : 0}
 
