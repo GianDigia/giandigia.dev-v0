@@ -11,8 +11,8 @@ const NameTag = ({scrolled}) => {
   // This is a workarount for a rehydration problem
   // https://github.com/styled-components/styled-components/issues/2629
   useEffect(() => {
-    setTimeout((isFull) => setIsFullName(isFull), 500, (!isMobile && !scrolled))
-  }, [])
+    setTimeout((isFull) => setIsFullName(isFull), 10, (!isMobile && !scrolled))
+  })
 
   return <Link to={'/'}>
     <Group visible={!isFullName}>&lt;</Group>
