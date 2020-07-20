@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
 import NameTag from './navbar/nameTag'
 import ThemeToggle from './ThemeToggle'
-import Container from './styled/container'
+import Container from './base/container'
 
 const windowScrollY = () => {
   let currentScroll = 0

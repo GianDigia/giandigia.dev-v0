@@ -18,7 +18,7 @@ import Img from 'gatsby-image'
 import Navbar from './navbar'
 import { useRecoilState } from 'recoil/dist'
 import { darkModeState } from '../recoil/atoms'
-import Container from './styled/container'
+import Container from './base/container'
 
 const Layout = ({ children }) => {
   const data = useStaticQuery(graphql`
