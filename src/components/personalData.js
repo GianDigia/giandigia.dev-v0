@@ -5,18 +5,6 @@ import { default as GImg } from 'gatsby-image'
 import { isBrowser } from 'react-device-detect'
 
 const PersonalData = () => {
-  const data = useStaticQuery(graphql`
-		query {
-      placeholderImage: file(relativePath: { eq: "tooSerious.jpg" }) {
-        childImageSharp {
-          fluid(quality: 50) {
-            ...GatsbyImageSharpFluid
-          }
-        }
-      }
-    }
-  `)
-
   return (
     <Wrapper>
       <Img fluid={data.placeholderImage.childImageSharp.fluid} />
