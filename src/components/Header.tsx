@@ -1,17 +1,13 @@
-import { Link } from "gatsby"
-import React, { useEffect, useState } from "react"
-import styled from "styled-components"
+import { Link } from 'gatsby'
+import React, { useEffect, useState } from 'react'
+import styled from 'styled-components'
 
-import ThemeToggle from "./header/ThemeToggle"
+import ThemeToggle from './header/ThemeToggle'
 
-interface Props {
-  siteTitle: string
-}
-
-const Header = ({ siteTitle }: Props) => {
+const Header = () => {
   const [theme, setTheme] = useState(window.__theme)
   useEffect(() => {
-    window.__onThemeChange = t => {
+    window.__onThemeChange = (t) => {
       setTheme(t)
     }
   }, [])
@@ -23,7 +19,7 @@ const Header = ({ siteTitle }: Props) => {
           <Link to="/">GianDigia</Link>
         </Title>
         <ThemeToggle
-          darkMode={theme === "dark"}
+          darkMode={theme === 'dark'}
           toggleMode={() => {
             window.__togglePreferredTheme(theme)
           }}
